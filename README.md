@@ -40,4 +40,5 @@ You can simply download the project and open `index.html` in your browser.
 QR-Code-Generator-and-Scanner/
 ├── index.html
 ├── style.css
-└── script.js
+├── script.js
+└── qr.png
