@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Code Generator & Reader</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>QR Code Generator & QR Reader</h1>
+    <p class="lead">
+      Generate a QR code from text/URL or upload an image which contains a QR code to read its data.
+    </p>
+
+    <div class="layout">
+      <!-- ========== LEFT: QR GENERATOR ========== -->
+      <section class="generator">
+        <h2>Generate QR Code</h2>
+
+        <label for="qr-text" class="label">Text or URL</label>
+        <textarea
+          id="qr-text"
+          rows="3"
+          placeholder="Type any text or paste a URL here..."
+        ></textarea>
+
+        <div class="controls">
+          <button id="generate-btn">Generate QR</button>
+          <button id="download-btn" disabled>Download PNG</button>
+        </div>
+
+        <div id="qrcode" class="qr-preview">
+          <span class="placeholder">QR code will appear here</span>
+        </div>
+      </section>
+
+      <!-- ========== RIGHT: QR READER ========== -->
+      <section class="reader">
+        <h2>QR Reader</h2>
+
+        <div class="controls">
+          <label class="file-btn" for="fileInput">Upload QR code</label>
+          <input id="fileInput" type="file" accept="image/*" />
+          <button id="copyBtn">Copy Result</button>
+        </div>
+
+        <div class="viewer">
+          <div class="image-wrap">
+            <div class="preview-box">
+              <img id="preview" alt="QR image preview" />
+              <span class="placeholder">Uploaded QR image will appear here</span>
+            </div>
+            <canvas id="canvas"></canvas>
+            <small class="hint">
+              Choose a PNG/JPEG image that clearly shows the QR code.
+            </small>
+          </div>
+
+          <div class="result">
+            <h3>Result</h3>
+            <div class="box" id="output">No result yet</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p class="footer">
+      Built with <strong>qrcodejs</strong> and <strong>jsQR</strong> (all client-side).
+    </p>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
