@@ -1,0 +1,238 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left,#e0f2fe 0%,#c7d2fe 30%,#f5d0fe 65%,#fee2e2 100%);
+  color: #111;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: radial-gradient(
+    circle at top left,
+    #eef2ff 0,
+    #e0f2fe 40%,
+    #dcfce7 75%,
+    #fef9c3 100%
+  );
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(20, 30, 60, 0.08);
+  padding: 18px 18px 20px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.lead {
+  margin: 0 0 14px;
+  color: #556;
+  font-size: 14px;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Sections */
+.generator,
+.reader {
+  flex: 1;
+  min-width: 260px;
+  background: radial-gradient(circle at top right,#fef9c3 0,#dcfce7 45%,#f9fafb 100%);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.generator h2,
+.reader h2 {
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+/* Generator form */
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+textarea {
+  width: 95%;
+  resize: vertical;
+  min-height: 50px;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e3e8f0;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 12px;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #e3e8f0;
+  background: #fff;
+  font-size: 13px;
+}
+
+#generate-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  border: none;
+  color: #fff;
+}
+
+#generate-btn:hover {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+}
+
+#download-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#download-btn:not(:disabled):hover,
+#copyBtn:hover {
+  background: #edf2ff;
+}
+
+/* Generator preview */
+.qr-preview {
+  width: 100%;
+  max-width: 260px;
+  height: 260px;
+  margin-inline: auto;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.qr-preview .placeholder {
+  color: #9ca3af;
+  font-size: 13px;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Reader styles (from your code, thoda tweak) */
+.viewer {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.image-wrap {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-box {
+  width: 70%;
+  border-radius: 8px;
+  background: #ffffff;        /* grey hata diya, white kiya */
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.preview-box .placeholder {
+  color: #9ca3af;
+  font-size: 13px;
+  text-align: center;
+  padding: 8px;
+}
+
+#canvas {
+  display: none;
+}
+
+.result {
+  width: 260px;
+  min-width: 220px;
+}
+
+.result .box {
+  background: #f7fafc;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #e2e8f0;
+  word-break: break-word;
+  font-size: 13px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label.file-btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #e3e8f0;
+  background: #fff;
+  font-size: 13px;
+}
+
+.hint {
+  /* display: block; */
+  margin-top: 8px;
+  color: #666;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .result {
+    width: 100%;
+  }
+}
